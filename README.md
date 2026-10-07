@@ -13,6 +13,6 @@ The following scripts will reproduce all models and results from the paper. Each
 
 - `make_composite_videos.py`: This script processes the short video clips from Pixabay into a series of edited videos composed of six 10-second segments. This assumes a directory of mp4 files to sample from. Other file types in the directory will be ignored.
 
-- `test.py`: This script applies the trained model on a set of videos and records relevant information for the reporting of final model performance.
+- `test.py`: This script applies the trained model on a set of composite videos and clips, and records relevant information for the reporting of final model performance.
 
 - `Evaluate_results.py`: This script applies the evaluation process to the labels for the generated synthetic data. It calculates the TP,FP,FN,TN and saves them to a csv.
