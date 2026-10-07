@@ -1,0 +1,8 @@
+pandasnumpy
+opencv-python
+pandas
+psutil
+pytorch-cuda
+scikit-learn
+torchvision
+transformers
