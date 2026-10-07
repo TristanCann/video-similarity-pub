@@ -1,6 +1,6 @@
 # Codebase for Contrastive learning for video reuse detection
 
-This codebase supports the paper Contrastive learning for video reuse detection, which uses a constrastive learning approach to identify similar visuals between two sets of videos.
+This codebase supports the paper "Contrastive learning for video reuse detection" by Arjun Biswas and Tristan J.B. Cann. It applies a constrastive learning approach to identify similar visuals between two sets of videos.
 
 The method begins by filtering each video down to a series of representative frames, i.e. those that capture all unique visual signatures in a given video. Then, the sets of representative frames are compared by the Siamese network to identify cases of repeated visuals.
 
@@ -8,6 +8,14 @@ We demonstrated the utility of this method using [Imagenet100](https://huggingfa
 
 ## File descriptions and running order
 The following scripts will reproduce all models and results from the paper. Each script contains a description of input parameters and an illustrative example of running the script.
+
+- `data`: This folder collects all relevant data used as inputs for the various scripts, and processed outputs required to reproduce each of the figures.
+	- `example_frame.jpg`: An example image to make the augmentation examples. This image was taken by the authors.
+
+- `figs`: This folder contains output figures as produced by each of the included scripts.
+	- `blur.jpg`, `brightness.jpg`, `contrast.jpg`, `rotated.jpg`, `saturation.jpg`, `text_overlay.jpg`: Augmented versions of `example_frame.jpg`, included in Fig. 3.
+
+- `generate_augementation_examples.py`: This script produces the example images to show each of the augmentations applied during the trainig process, as included in Fig. 3.
 
 - `train.py`: This script trains the contrastive model over one of three backbones (densenet 121, resnet50 or clip-vit-base-patch16) on a dataset of images sampled from Imagenet100.
 
