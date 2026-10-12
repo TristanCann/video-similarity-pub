@@ -22,14 +22,14 @@ The following scripts will reproduce all models and results from the paper. Each
 	- `Downsampled_Representative_Frames.csv`: Statistics for the number of frames for each video before and after identifying representative frames.
 	- `Results_of_Comparison_metrics-Pixabay-{BACKBONE}-{THRESHOLD}-{THRESHOLD}-{THRESHOLD}.csv`: A set of files for each backbone and threshold to assess the performance at recovering the clips that make up each composite video.
 
-- `generate_augementation_examples.py`: This script produces the example images to show each of the augmentations applied during the trainig process, as included in Fig. 3.
+- `Evaluate_results.py`: This script applies the evaluation process to the labels for the generated synthetic data. It calculates the TP,FP,FN,TN and saves them to a csv.
 
-- `train.py`: This script trains the Siamese network over one of three backbones (densenet 121, resnet50 or clip-vit-base-patch16) on a dataset of images sampled from Imagenet100.
+- `generate_augementation_examples.py`: This script produces the example images to show each of the augmentations applied during the trainig process, as included in Fig. 3.
 
 - `make_composite_videos.py`: This script processes the short video clips from Pixabay into a series of edited videos composed of six 10-second segments. This assumes a directory of mp4 files to sample from. Other file types in the directory will be ignored.
 
+- `plot_figures.ipynb`: A jupyter notebook to compile the remaining figures from the results. Most figures produce `.eps`, although those with transparent elements are exported as `.pdf`.
+
 - `test.py`: This script applies the trained model on a set of composite videos and clips, and records relevant information for the reporting of final model performance.
 
-- `Evaluate_results.py`: This script applies the evaluation process to the labels for the generated synthetic data. It calculates the TP,FP,FN,TN and saves them to a csv.
-
-- `plot_figures.ipynb`: A jupyter notebook to compile the remaining figures from the results. Most figures produce `.eps`, although those with transparent elements are exported as `.pdf`.
+- `train.py`: This script trains the Siamese network over one of three backbones (densenet 121, resnet50 or clip-vit-base-patch16) on a dataset of images sampled from Imagenet100.
