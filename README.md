@@ -9,15 +9,22 @@ We demonstrated the utility of this method using [Imagenet100](https://huggingfa
 ## File descriptions and running order
 The following scripts will reproduce all models and results from the paper. Each script contains a description of input parameters and an illustrative example of running the script.
 
+- `composite_videos`: This folder would contain the composite videos used for testing, but they are omitted from this repository for copyright and file size purposes.
+	- `Syntethic-Video-Mapping-Groundtruth.csv`: A file that links the composite video names to the underlying ground truth clips that they are comprised of. 
+
 - `data`: This folder collects all relevant data used as inputs for the various scripts, and processed outputs required to reproduce each of the figures.
 	- `example_frame.jpg`: An example image to make the augmentation examples. This image was taken by the authors.
 
 - `figs`: This folder contains output figures as produced by each of the included scripts.
 	- `blur.jpg`, `brightness.jpg`, `contrast.jpg`, `rotated.jpg`, `saturation.jpg`, `text_overlay.jpg`: Augmented versions of `example_frame.jpg`, included in Fig. 3.
 
+- `Results`: This folder contains similarity results from the comparisons between the composite videos and clips.
+	- `Downsampled_Representative_Frames.csv`: Statistics for the number of frames for each video before and after identifying representative frames.
+	- `Results_of_Comparison_metrics-Pixabay-{BACKBONE}-{THRESHOLD}-{THRESHOLD}-{THRESHOLD}.csv`: A set of files for each backbone and threshold to assess the performance at recovering the clips that make up each composite video.
+
 - `generate_augementation_examples.py`: This script produces the example images to show each of the augmentations applied during the trainig process, as included in Fig. 3.
 
-- `train.py`: This script trains the contrastive model over one of three backbones (densenet 121, resnet50 or clip-vit-base-patch16) on a dataset of images sampled from Imagenet100.
+- `train.py`: This script trains the Siamese network over one of three backbones (densenet 121, resnet50 or clip-vit-base-patch16) on a dataset of images sampled from Imagenet100.
 
 - `make_composite_videos.py`: This script processes the short video clips from Pixabay into a series of edited videos composed of six 10-second segments. This assumes a directory of mp4 files to sample from. Other file types in the directory will be ignored.
 
