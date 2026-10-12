@@ -426,7 +426,7 @@ class TrainModel():
         Image paths are only stored in the dataloaders. Train function loads the images per batch and trains the model.'''
         
         # Seed the numpy RNG.
-        #np.random.seed(self.seed)
+        np.random.seed(self.seed)
 
         train_loader,test_loader = self.prepare_dataset()
         self.model.train()
