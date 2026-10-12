@@ -5,7 +5,7 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageDraw, ImageFont
 import os
 
 # Input and output setup
-input_path = "data/example_frame.jpg" # change to your image filename
+input_path = "example_frame.jpg" # change to your image filename
 output_dir = "figs"
 os.makedirs(output_dir, exist_ok=True)
 
@@ -17,23 +17,23 @@ img = img.resize((224, 224))
 
 # 1. Lower brightness
 brightness = ImageEnhance.Brightness(img).enhance(0.5)
-brightness.save(os.path.join(output_dir, "brightness.jpg"))
+brightness.save(os.path.join(output_dir, "fig3a.eps"))
 
 # 2. Lower saturation (color)
 saturation = ImageEnhance.Color(img).enhance(0.5)
-saturation.save(os.path.join(output_dir, "saturation.jpg"))
+saturation.save(os.path.join(output_dir, "fig3b.eps"))
 
 # 3. Lower contrast
 contrast = ImageEnhance.Contrast(img).enhance(0.5)
-contrast.save(os.path.join(output_dir, "contrast.jpg"))
+contrast.save(os.path.join(output_dir, "fig3c.eps"))
 
 # 4. Apply Gaussian blur
 blur = img.filter(ImageFilter.GaussianBlur(radius=5))
-blur.save(os.path.join(output_dir, "blur.jpg"))
+blur.save(os.path.join(output_dir, "fig3d.eps"))
 
 # 5. Rotate image (e.g., 30 degrees)
 rotated = img.rotate(30, expand=True)
-rotated.save(os.path.join(output_dir, "rotated.jpg"))
+rotated.save(os.path.join(output_dir, "fig3e.eps"))
 
 # 6. Add text overlay
 draw = ImageDraw.Draw(img.copy())
@@ -41,6 +41,6 @@ font = ImageFont.load_default(32) # you can replace with a TTF font
 text_img = img.copy()
 draw = ImageDraw.Draw(text_img)
 draw.text((80, 40), "Hello", fill=(255, 255, 255), font=font)
-text_img.save(os.path.join(output_dir, "text_overlay.jpg"))
+text_img.save(os.path.join(output_dir, "fig3f.eps"))
 
 print("All augmented images saved in:", output_dir)

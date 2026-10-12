@@ -1,8 +1,10 @@
-pandasnumpy
+matplotlib
+numpy
 opencv-python
 pandas
 psutil
 pytorch-cuda
 scikit-learn
+seaborn
 torchvision
 transformers

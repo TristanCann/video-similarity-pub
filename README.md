@@ -24,3 +24,5 @@ The following scripts will reproduce all models and results from the paper. Each
 - `test.py`: This script applies the trained model on a set of composite videos and clips, and records relevant information for the reporting of final model performance.
 
 - `Evaluate_results.py`: This script applies the evaluation process to the labels for the generated synthetic data. It calculates the TP,FP,FN,TN and saves them to a csv.
+
+- `plot_figures.ipynb`: A jupyter notebook to compile the remaining figures from the results. Most figures produce `.eps`, although those with transparent elements are exported as `.pdf`.
